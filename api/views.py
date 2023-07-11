@@ -17,7 +17,7 @@ class EmpleadosViewSet(viewsets.ModelViewSet):
     serializer_class = SerializerEmpleados
     queryset = Empleados.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['empresa__nombre_empresa']  # Reemplaza 'empresa' por el nombre del campo ForeignKey en tu modelo
+    filterset_fields = ['empresa__nombre_empresa']  
 
     def get_queryset(self):
         queryset = super().get_queryset()
