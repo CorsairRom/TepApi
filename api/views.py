@@ -16,4 +16,4 @@ class EmpleadosViewSet(viewsets.ModelViewSet):
     serializer_class = SerializerEmpleados
     queryset = Empleados.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['empresa']
+    filterset_fields = ['empresa',]
