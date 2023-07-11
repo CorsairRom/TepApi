@@ -17,11 +17,6 @@ class EmpleadosViewSet(viewsets.ModelViewSet):
     serializer_class = SerializerEmpleados
     queryset = Empleados.objects.all()
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['empresa__nombre_empresa']  
+    filterset_fields = ['empresa']  
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        empresa_param = self.request.query_params.get('empresa')
-        if empresa_param:
-            queryset = queryset.filter(empresa__nombre_empresa__icontains=empresa_param)
-        return queryset
+ 
